@@ -1,0 +1,6 @@
+nltk
+pandas
+joblib
+seaborn
+wordcloud
+scikit-learn
