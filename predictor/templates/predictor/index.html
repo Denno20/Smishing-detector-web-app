@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <!--Load bootstrap libraries-->
+        {% load bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+
+        <!--Define custom css to center some elements-->
+        <style>
+            .center {
+                text-align:center;
+                margin:auto;
+            }
+        </style>
+    </head>
+    <body class="w-100">
+        <h1 class="text-center mb-4">AI Smishing Checker</h1>
+        <!--Form for entering data-->
+        <form id="form" class="text-center container-sm" method="POST" style="display: block;">
+            {% csrf_token %}
+            <div class="mb-4">
+                <textarea class="w-100" id="sms" name="sms" rows="5"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg w-100">Enter</button>
+        </form>
+        <!--Spinner which shows when the backend is processing-->
+        <div class="center" id="spinner" style="display: none;">
+            <div class="spinner-border" role="status">
+                <span class="sr-only"></span>
+            </div>
+        </div>
+        <!--Results are showed here-->
+        <div class="center">
+            <h1 id="prediction" class="fs-1"></h1>
+            <p id="accuracy" class="fs-3"></p>
+        </div>
+        <!--Load JavaScript Libraries-->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(function() {
+                //When the user clicks the enter button
+                $('#form').submit(function() {
+                    //Hide all the lements on the screen and show the spinner
+                    $('#spinner').css('display', 'block')
+                    $('#form').css('display', 'none')
+                    $.ajax({
+                        //Send a post request to predict view using ajax
+                        type: 'POST',
+                        url: '{% url "predict" %}',
+                        data: $(this).serialize(),
+                        dataType: 'json',
+                        //On successful response
+                        success: function(response) {
+                            //Hide the spinner and show the form
+                            $('#spinner').css('display', 'none')
+                            $('#form').css('display', 'block')
+                            //If the prediction is category smishing
+                            if (response["prediction"] == "smish") {
+                                $('#prediction').text("Prediction: This is a smishing text")
+                                $('#accuracy').text("Probability: " + parseFloat(response["value"]) * 100 + "%")
+                            } else {
+                                //If the prediction is category legitimate or ham
+                                $('#prediction').text("Prediction: This is not a malicious or spam text")
+                                $('#accuracy').text("Probability: " + parseFloat(response["value"]) * 100 + "%")
+                            }
+                        }
+                    });
+                    return false;
+                }); 
+            })
+        </script>
+    </body>
+</html>
