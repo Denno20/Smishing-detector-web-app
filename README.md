@@ -58,7 +58,14 @@ print(predicted)
 ```
 
 ## Dataset
-The model can be trained on any smishing dataset.
+The model can be trained on any smishing dataset using a csv file of the following structure:
+
+| Label    | Text          |
+| -------- | ------------- |
+| smish    | SMS GOES HERE |
+| ham      | SMS GOES HERE |
+
+Data must be labelled as either "smish" or "ham", and there must be two columns with the header "Label" and "Text".
 
 ## Resources used for this application
 
