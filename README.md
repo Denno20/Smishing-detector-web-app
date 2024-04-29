@@ -4,6 +4,8 @@ This Django Web Application is a wrapper for a trained voting classifier model t
 
 ## Installation
 
+It is recommended to run this project on a linux based environment.
+
 Download the code, either as a zip file or through git clone:
 
 ```bash
