@@ -35,7 +35,7 @@ from combinedClassifier import CombinedClassifier
 
 #Create classifier
 model = CombinedClassifier()
-model.load_dataset("../Datasets/public.csv")
+model.load_dataset("./Datasets/combined_dataset.csv")
 
 #The option to save the model appears in this function
 #WARNING: Saving the model will OVERWRITE the current model joblib files saved in memory
