@@ -1,6 +1,6 @@
 # Smishing Text Analysis Web Application
 ![image](images/banner.png)
-This Django Web Application is a wrapper for a trained voting classifier model that combines the results of 6 different classifiers through soft voting. The voting classifier has been trained on a dataset, which combines a public dataset and 240 smishing texts that have been generated using Chat-GPT 3.5. 
+This Django Web Application is a wrapper for a trained voting classifier model that combines the results of 5 different classifiers through soft voting. The voting classifier has been trained on a dataset, which combines a public dataset and 240 smishing texts that have been generated using Chat-GPT 3.5. 
 
 ## Installation
 
