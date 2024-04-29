@@ -1,3 +1,3 @@
-venv
-predictor/__pycache__/*
+venv/
+predictor/__pycache__/
 db.sqlite3
