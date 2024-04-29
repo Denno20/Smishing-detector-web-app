@@ -4,6 +4,14 @@ This Django Web Application is a wrapper for a trained voting classifier model t
 
 ## Installation
 
+Download the code, either as a zip file or through git clone:
+
+```bash
+git clone git@github.com:Denno20/Smishing-detector-web-app.git
+```
+
+Once downloaded, head into the root of the directory where manage.py is located.
+
 It is best practice use a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/) to isolate package installations from other projects. To create a virtual environment, go to the project root directory and run the following command. This will create a new virtual environment in a local folder named .venv. After this has installed, activate the virtual environment.
 
 ```bash
