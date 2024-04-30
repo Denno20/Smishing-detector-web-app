@@ -9,7 +9,7 @@ It is recommended to run this project on a linux based environment.
 Download the code, either as a zip file or through git clone:
 
 ```bash
-git clone git@github.com:Denno20/Smishing-detector-web-app.git
+git clone https://github.com/Denno20/Smishing-detector-web-app.git
 ```
 
 Once downloaded, head into the root of the directory where manage.py is located.
