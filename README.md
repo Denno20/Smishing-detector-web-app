@@ -21,7 +21,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the packages in the requirements.txt file.
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the packages in the requirements.txt file. This may take a while so please be patient.
 
 ```bash
 pip3 install -r requirements.txt
